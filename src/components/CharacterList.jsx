@@ -3,9 +3,9 @@ import Character from "./Character";
 
 function Navpage({ page, setPage }) {
 	return (
-		<div className="px-20 py-5 flex grow items-center">
+		<div className="px-20 py-5 grid grid-flow-col justify-items-stretch">
 			<button
-				className=" grow justify-self-end  bg-slate-700 hover:bg-slate-600 text-white font-bold py-0 px-4 border-b-4 border-slate-700 hover:border-slate-600 rounded "
+				className="  justify-self-start  bg-slate-700 hover:bg-slate-600 text-white font-bold py-0 px-4 border-b-4 border-slate-700 hover:border-slate-600 rounded "
 				onClick={() => {
 					if (page === 1) {
 						page;
@@ -13,10 +13,10 @@ function Navpage({ page, setPage }) {
 					setPage(page - 1);
 				}}
 			>
-				prev &#60;-
+				&#60;- prev
 			</button>
 			<button
-				className=" grow justify-self-end  bg-slate-700 hover:bg-slate-600 text-white font-bold py-0 px-4 border-b-4 border-slate-700 hover:border-slate-600 rounded "
+				className="  justify-self-end  bg-slate-700 hover:bg-slate-600 text-white font-bold py-0 px-4 border-b-4 border-slate-700 hover:border-slate-600 rounded "
 				onClick={() => setPage(page + 1)}
 			>
 				nex -&gt;
@@ -43,6 +43,8 @@ function CharacterList() {
 
 	return (
 		<div>
+			<br />
+			<br />
 			<Navpage page={page} setPage={setPage} />
 			{loading ? (
 				<h1 className="text-xl">Loading</h1>
